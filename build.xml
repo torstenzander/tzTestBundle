@@ -1,0 +1,97 @@
+<project name="myinvoiz" default="build">
+    <property file="build.properties"/>
+
+    <target name="build" depends="clean,prepare,phpunit"/>
+    <!-- remove all old directories -->
+    <target name="clean">
+        <delete dir="${baseDir}/build"/>
+        <delete dir="${baseDir}/release"/>
+        <delete dir="${baseDir}/codebrowser"/>
+        <delete dir="${baseDir}/web"/>
+        <delete dir="${baseDir}/docs"/>
+    </target>
+
+    <!-- create the used directories -->
+    <target name="prepare">
+        <mkdir dir="${baseDir}/build/logs"/>
+        <mkdir dir="${baseDir}/docs"/>
+        <mkdir dir="${baseDir}/release"/>
+        <mkdir dir="${baseDir}/codebrowser"/>
+        <mkdir dir="${baseDir}/web"/>
+    </target>
+    <!-- create phpDoc -->
+    <target name="doc-blox">
+        <exec executable="docblox" dir="${sourceDir}" logerror="on">
+            <arg line="run -d  ${sourceDir}/src -t ${baseDir}/docs "/>
+        </exec>
+    </target>
+
+    <!-- detects the copy and paste parts -->
+    <target name="phpcpd" depends="prepare">
+        <exec dir="${baseDir}" executable="phpcpd" failonerror="false">
+            <arg line="--log-pmd build/logs/cpd.xml ${sourceDir}/src"/>
+        </exec>
+    </target>
+
+    <!-- pdepend uses some metrics -->
+    <target name="pdepend" depends="prepare">
+        <exec dir="${baseDir}" executable="pdepend" failonerror="true">
+            <arg line="--jdepend-xml=build/logs/jdepend.xml ${sourceDir}/src"/>
+        </exec>
+    </target>
+
+    <!-- codesniffer checks the sourceDir for some coding style violations -->
+    <target name="phpcs" depends="prepare">
+        <exec dir="${sourceDir}" executable="phpcs" output="${baseDir}/build/logs/checkstyle.xml"
+              failonerror="false">
+            <arg line="--extensions=php
+            		--standard=${sourceDir}/app/ruleset.xml
+                    --report=checkstyle ${sourceDir}/src"/>
+        </exec>
+    </target>
+    <!-- unittesting - creates 2 log files a test log and a coverage log -->
+    <target name="phpunit">
+        <exec dir="${sourceDir}/app" executable="phpunit" failonerror="true">
+            <arg line=" --log-junit ${baseDir}/build/logs/junit.xml
+            			--coverage-clover ${baseDir}/build/logs/clover.xml
+            			--coverage-html ${baseDir}/web
+            			--debug
+            			--configuration ${sourceDir}/app/phpunit.xml.dist
+            			"/>
+        </exec>
+    </target>
+    <target name="phpmd">
+        <exec dir="${sourceDir}/src" executable="phpmd" failonerror="false">
+            <arg line=". xml codesize
+				--reportfile ${baseDir}/build/logs/pmd.xml"
+                    />
+        </exec>
+    </target>
+    <!--
+         the codebrowser builds a nice view from the xml log files and creates
+         some html files
+     -->
+    <target name="phpcb">
+        <exec dir="${baseDir}" executable="phpcb" failonerror="false">
+            <arg line="--log build/logs --source ${sourceDir} --output codebrowser"/>
+        </exec>
+    </target>
+    <!--
+         builds a release - a zip file with the important sourceDirs, without
+         tests
+     -->
+    <target name="release" depends="prepare">
+        <zip destfile="${baseDir}/release/${ant.project.name}.zip">
+            <fileset dir="${sourceDir}" excludes="**.svn/**, testing/**"/>
+        </zip>
+    </target>
+
+    <target name="phploc"
+            description="Generate phploc.csv">
+        <exec executable="phploc">
+            <arg value="--log-csv"/>
+            <arg value="${baseDir}/build/logs/phploc.csv"/>
+            <arg path="${sourceDir}"/>
+        </exec>
+    </target>
+</project>
