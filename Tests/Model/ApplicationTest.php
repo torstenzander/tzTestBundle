@@ -1,0 +1,44 @@
+<?php
+/*
+ * This file is part of the TzTestBundle package.
+ *
+ * ©2012 Torsten Zander <info@tzander.de>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+namespace Tz\TestBundle\Test\Model;
+
+use Symfony\Bundle\FrameworkBundle\Test\WebTestCase as BaseWebTestCase;
+use Tz\TestBundle\Model\Application;
+
+class ApplicationTest extends BaseWebTestCase
+{
+    /**
+     * @var Tz\TestBundle\Model\Application
+     */
+    protected $application;
+
+    protected function setUp()
+    {
+        $this->application = new Application;
+    }
+
+    /**
+     * @test
+     */
+    public function testSetUpSchema()
+    {
+        $integer = $this->application->setUpSchema(self::$kernel);
+        $this->assertInternalType('int', $integer);
+    }
+
+    /**
+     * @test
+     */
+    public function getEnviroment()
+    {
+        $this->assertNotNull(Application::getEnviroment());
+    }
+}
+
