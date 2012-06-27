@@ -72,6 +72,12 @@
              <arg line=" -s http://getcomposer.org/installer | php"
          </exec>
     </target>
+    <target name="composer-install">
+        <exec dir="php" executable="">
+            <arg line="composer.phar install"
+                 />
+        </exec>
+    </target>
     <!--
          the codebrowser builds a nice view from the xml log files and creates
          some html files
