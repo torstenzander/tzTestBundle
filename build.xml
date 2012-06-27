@@ -71,7 +71,7 @@
     </target>
     <target name="composer">
          <exec dir="${sourceDir}" executable="curl">
-             <arg line=" -s http://getcomposer.org/installer | php" />
+             <arg line=" -s http://getcomposer.org/installer" />
          </exec>
     </target>
     <target name="composer-install">
