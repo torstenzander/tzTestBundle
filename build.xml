@@ -70,12 +70,12 @@
         </exec>
     </target>
     <target name="composer">
-         <exec dir="curl" executable="">
+         <exec dir="${sourceDir}" executable="curl">
              <arg line=" -s http://getcomposer.org/installer | php" />
          </exec>
     </target>
     <target name="composer-install">
-        <exec dir="php" executable="">
+        <exec dir="${sourceDir}" executable="php">
             <arg line="composer.phar install"
                  />
         </exec>
