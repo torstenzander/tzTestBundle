@@ -58,7 +58,7 @@
             			--coverage-clover ${baseDir}/build/logs/clover.xml
             			--coverage-html ${baseDir}/web
             			--debug
-            			--configuration ${sourceDir}/app/phpunit.xml.dist
+            			--configuration ${sourceDir}/phpunit.xml.dist
             			"/>
         </exec>
     </target>
