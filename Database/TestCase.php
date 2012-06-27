@@ -11,7 +11,7 @@ namespace Tz\TestBundle\Database;
 
 use Tz\TestBundle\Model\Application;
 
-require_once(__DIR__ . "/../../../../app/AppKernel.php");
+require_once(__DIR__ . "/../Tests/Kernel.php");
 
 class TestCase extends \PHPUnit_Extensions_Database_TestCase
 {
@@ -38,7 +38,7 @@ class TestCase extends \PHPUnit_Extensions_Database_TestCase
      */
     static protected function createClient(array $options = array(), array $server = array())
     {
-        static::$kernel = new \AppKernel(Application::getEnviroment(), true);
+        static::$kernel = new \Kernel(Application::getEnviroment(), true);
         static::$kernel->boot();
         $client = static::$kernel->getContainer()->get('test.client');
         $client->setServerParameters($server);
