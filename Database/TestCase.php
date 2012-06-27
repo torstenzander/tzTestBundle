@@ -11,8 +11,6 @@ namespace Tz\TestBundle\Database;
 
 use Tz\TestBundle\Model\Application;
 
-require_once(__DIR__ . "/../Tests/Kernel.php");
-
 class TestCase extends \PHPUnit_Extensions_Database_TestCase
 {
 
