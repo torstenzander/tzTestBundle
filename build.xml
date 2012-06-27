@@ -9,6 +9,7 @@
         <delete dir="${baseDir}/codebrowser"/>
         <delete dir="${baseDir}/web"/>
         <delete dir="${baseDir}/docs"/>
+        <delete dir="${baseDir}/source/vendor"/>
     </target>
 
     <!-- create the used directories -->
@@ -18,6 +19,7 @@
         <mkdir dir="${baseDir}/release"/>
         <mkdir dir="${baseDir}/codebrowser"/>
         <mkdir dir="${baseDir}/web"/>
+        <mkdir dir="${baseDir}/source/vendor"/>
     </target>
     <!-- create phpDoc -->
     <target name="doc-blox">
