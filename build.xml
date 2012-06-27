@@ -53,7 +53,7 @@
     </target>
     <!-- unittesting - creates 2 log files a test log and a coverage log -->
     <target name="phpunit">
-        <exec dir="${sourceDir}/app" executable="phpunit" failonerror="true">
+        <exec dir="${sourceDir}" executable="phpunit" failonerror="true">
             <arg line=" --log-junit ${baseDir}/build/logs/junit.xml
             			--coverage-clover ${baseDir}/build/logs/clover.xml
             			--coverage-html ${baseDir}/web
@@ -63,7 +63,7 @@
         </exec>
     </target>
     <target name="phpmd">
-        <exec dir="${sourceDir}/src" executable="phpmd" failonerror="false">
+        <exec dir="${sourceDir}" executable="phpmd" failonerror="false">
             <arg line=". xml codesize
 				--reportfile ${baseDir}/build/logs/pmd.xml"
                     />
