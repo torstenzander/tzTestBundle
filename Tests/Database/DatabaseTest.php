@@ -13,7 +13,7 @@ use Tz\TestBundle\Database\PDO as Database;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase as BaseWebTestCase;
 
-class DatabaseTest extends BaseWebTestCase
+class DatabaseTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * @var Tz\FixtureBundle\Model\Database
@@ -22,8 +22,7 @@ class DatabaseTest extends BaseWebTestCase
 
     public function setUp()
     {
-        $this->createClient();
-        $this->database =  $pdo = static::$kernel->getContainer()->get('tz_test.database');
+        $this->database =  $pdo = new Database('mysql', 'localhost', 'myinvoiz', 'root', 'root');
     }
 
     public function tearDown()

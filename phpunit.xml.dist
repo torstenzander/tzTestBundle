@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- http://www.phpunit.de/manual/current/en/appendixes.configuration.html -->
+<phpunit
+        backupGlobals="false"
+        backupStaticAttributes="false"
+        colors="true"
+        convertErrorsToExceptions="true"
+        convertNoticesToExceptions="true"
+        convertWarningsToExceptions="true"
+        processIsolation="false"
+        stopOnFailure="false"
+        syntaxCheck="false"
+        bootstrap="Tests/bootstrap.php.cache">
+
+    <testsuites>
+        <testsuite name="Test Bundle Test Suite">
+            <directory>Tests</directory>
+        </testsuite>
+    </testsuites>
+    <php>
+        <server name="KERNEL_DIR" value="/Users/torsten/Sites/tz_testBundle/Tests" />
+    </php>
+    <filter>
+        <whitelist>
+            <directory>../</directory>
+
+        </whitelist>
+    </filter>
+
+</phpunit>

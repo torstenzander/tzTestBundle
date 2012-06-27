@@ -1,0 +1,30 @@
+{
+    "name": "tz/test-bundle",
+    "type": "symfony-bundle",
+    "description": "Test bundle for phpunit tests",
+    "keywords": ["phpunit, symfony"],
+    "homepage": "http://www.tzander.de",
+    "license": "MIT",
+    "authors": [
+        {
+            "name":"Torsten Zander",
+            "email":"info@tzander.de",
+            "homepage":"http://www.tzander.de/"
+        },
+        {
+            "name": "Torsten Zander",
+            "homepage": "https://github.com/torstenzander"
+        }
+    ],
+
+    "require": {
+        "php": ">=5.3.2"
+    },
+    "require-dev": {
+    },
+    "autoload": {
+        "psr-0": { "tz\\TestBundle": "" }
+    },
+
+    "target-dir": "tz\\TestBundle"
+}
