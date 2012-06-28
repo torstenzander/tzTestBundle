@@ -10,7 +10,7 @@
 
 
 $vendorDir = __DIR__ . '/../vendor';
-
+require_once  $vendorDir.'/autoload.php';
 
 spl_autoload_register(function($class)
 {
