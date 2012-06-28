@@ -10,6 +10,7 @@
         <delete dir="${baseDir}/web"/>
         <delete dir="${baseDir}/docs"/>
         <delete dir="${baseDir}/source/vendor"/>
+        <delete file="${baseDir}/source/composer.lock"/>
     </target>
 
     <!-- create the used directories -->
