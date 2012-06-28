@@ -22,7 +22,8 @@
         "symfony/framework-bundle": "2.*",
         "symfony/security-bundle": "2.*" ,
         "symfony/class-loader": "2.*",
-        "symfony/console": "2.*"
+        "symfony/console": "2.*",
+        "symfony/config": "2.*"
     },
     "require-dev": {
     },
