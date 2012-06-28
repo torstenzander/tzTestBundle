@@ -16,8 +16,6 @@ use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\BrowserKit\Cookie;
 use Tz\TestBundle\Model\Application;
 
-require_once(__DIR__ . "/../../../../app/AppKernel.php");
-
 abstract class TestCase extends BaseWebTestCase
 {
     /**
@@ -59,7 +57,7 @@ abstract class TestCase extends BaseWebTestCase
      */
     public static function setUpBeforeClass()
     {
-        self::$kernel = new \AppKernel(Application::getEnviroment(), true);
+        self::$kernel = new \Kernel(Application::getEnviroment(), true);
         self::$kernel->boot();
         static::$client = self::createClient(array(), array());
         $application = static::$kernel->getContainer()->get('tz_model.application');
