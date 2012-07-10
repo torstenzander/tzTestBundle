@@ -56,8 +56,6 @@
     <target name="phpunit">
         <exec dir="${sourceDir}" executable="phpunit" failonerror="true">
             <arg line=" --log-junit ${baseDir}/build/logs/junit.xml
-            			--coverage-clover ${baseDir}/build/logs/clover.xml
-            			--coverage-html ${baseDir}/web
             			--debug
             			--configuration ${sourceDir}/phpunit.xml.dist
             			"/>
