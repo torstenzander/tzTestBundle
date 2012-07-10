@@ -32,7 +32,7 @@
     <!-- detects the copy and paste parts -->
     <target name="phpcpd" depends="prepare">
         <exec dir="${baseDir}" executable="phpcpd" failonerror="false">
-            <arg line="--log-pmd build/logs/cpd.xml ${sourceDir}/src"/>
+            <arg line="--log-pmd build/logs/cpd.xml ${sourceDir}"/>
         </exec>
     </target>
 
@@ -49,7 +49,7 @@
               failonerror="false">
             <arg line="--extensions=php
             		--standard=${sourceDir}/app/ruleset.xml
-                    --report=checkstyle ${sourceDir}/src"/>
+                    --report=checkstyle ${sourceDir}"/>
         </exec>
     </target>
     <!-- unittesting - creates 2 log files a test log and a coverage log -->
