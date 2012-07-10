@@ -25,7 +25,7 @@
     <!-- create phpDoc -->
     <target name="doc-blox">
         <exec executable="docblox" dir="${sourceDir}" logerror="on">
-            <arg line="run -d  ${sourceDir}/src -t ${baseDir}/docs "/>
+            <arg line="run -d  ${sourceDir} -t ${baseDir}/docs "/>
         </exec>
     </target>
 
