@@ -1,6 +1,7 @@
 <project name="myinvoiz" default="build">
     <property file="build.properties"/>
-
+    <property name="exclude_lib"
+              value="${baseDir}/vendor"/>
     <target name="build" depends="clean,prepare,phpunit"/>
     <!-- remove all old directories -->
     <target name="clean">
@@ -49,7 +50,9 @@
               failonerror="false">
             <arg line="--extensions=php
             		--standard=ruleset.xml
-                    --report=checkstyle ${sourceDir}"/>
+                    --report=checkstyle ${sourceDir}
+                    --ignore=${exclude_lib}"
+            />
         </exec>
     </target>
     <!-- unittesting - creates 2 log files a test log and a coverage log -->
