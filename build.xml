@@ -1,7 +1,7 @@
 <project name="myinvoiz" default="build">
     <property file="build.properties"/>
     <property name="exclude_lib"
-              value="${baseDir}/vendor"/>
+              value="${baseDir}/source/vendor"/>
     <target name="build" depends="clean,prepare,phpunit"/>
     <!-- remove all old directories -->
     <target name="clean">
