@@ -67,7 +67,8 @@
     <target name="phpmd">
         <exec dir="${sourceDir}" executable="phpmd" failonerror="false">
             <arg line=". xml codesize
-				--reportfile ${baseDir}/build/logs/pmd.xml"
+				--reportfile ${baseDir}/build/logs/pmd.xml
+                --exclude ${exclude_lib}"
                     />
         </exec>
     </target>
