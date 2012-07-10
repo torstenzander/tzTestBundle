@@ -39,7 +39,7 @@
     <!-- pdepend uses some metrics -->
     <target name="pdepend" depends="prepare">
         <exec dir="${baseDir}" executable="pdepend" failonerror="true">
-            <arg line="--jdepend-xml=build/logs/jdepend.xml ${sourceDir}/src"/>
+            <arg line="--jdepend-xml=build/logs/jdepend.xml ${sourceDir}"/>
         </exec>
     </target>
 
