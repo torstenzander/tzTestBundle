@@ -48,7 +48,7 @@
         <exec dir="${sourceDir}" executable="phpcs" output="${baseDir}/build/logs/checkstyle.xml"
               failonerror="false">
             <arg line="--extensions=php
-            		--standard=${sourceDir}/app/ruleset.xml
+            		--standard=ruleset.xml
                     --report=checkstyle ${sourceDir}"/>
         </exec>
     </target>
