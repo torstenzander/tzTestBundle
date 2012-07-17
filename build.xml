@@ -36,6 +36,7 @@
             <arg line="--log-pmd build/logs/cpd.xml ${sourceDir}"/>
             <arg line="--exclude ${exclude_lib}"/>
         </exec>
+        <echo>phpcpd --log-pmd build/logs/cpd.xml ${sourceDir} --exclude ${exclude_lib}</echo>
     </target>
 
     <!-- pdepend uses some metrics -->
