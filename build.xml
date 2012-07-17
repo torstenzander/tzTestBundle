@@ -34,6 +34,7 @@
     <target name="phpcpd" depends="prepare">
         <exec dir="${baseDir}" executable="phpcpd" failonerror="false">
             <arg line="--log-pmd build/logs/cpd.xml ${sourceDir}"/>
+            <arg line="--exclude ${exclude_lib}"/>
         </exec>
     </target>
 
