@@ -34,16 +34,16 @@
     <target name="phpcpd" depends="prepare">
         <echo>phpcpd --log-pmd build/logs/cpd.xml ${sourceDir} --exclude ${exclude_lib}</echo>
         <exec dir="${baseDir}" executable="phpcpd" failonerror="false">
-            <arg line="--log-pmd build/logs/cpd.xml ${sourceDir}"/>
-            <arg line="--exclude ${exclude_lib}"/>
+            <arg line="--log-pmd build/logs/cpd.xml "/>
+            <arg line="--exclude ${exclude_lib} ${sourceDir}"/>
         </exec>
     </target>
 
     <!-- pdepend uses some metrics -->
     <target name="pdepend" depends="prepare">
         <exec dir="${baseDir}" executable="pdepend" failonerror="true">
-            <arg line="--jdepend-xml=build/logs/jdepend.xml ${sourceDir}"/>
-            <arg line="--exclude ${exclude_lib}"/>
+            <arg line="--jdepend-xml=build/logs/jdepend.xml "/>
+            <arg line="--exclude=${exclude_lib} ${sourceDir}"/>
         </exec>
     </target>
 
@@ -53,8 +53,8 @@
               failonerror="false">
             <arg line="--extensions=php
             		--standard=ruleset.xml
-                    --report=checkstyle ${sourceDir}
-                    --ignore=${exclude_lib}"
+                    --report=checkstyle
+                    --ignore=${exclude_lib} ${sourceDir}"
             />
         </exec>
     </target>
