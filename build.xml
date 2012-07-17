@@ -32,17 +32,18 @@
 
     <!-- detects the copy and paste parts -->
     <target name="phpcpd" depends="prepare">
+        <echo>phpcpd --log-pmd build/logs/cpd.xml ${sourceDir} --exclude ${exclude_lib}</echo>
         <exec dir="${baseDir}" executable="phpcpd" failonerror="false">
             <arg line="--log-pmd build/logs/cpd.xml ${sourceDir}"/>
             <arg line="--exclude ${exclude_lib}"/>
         </exec>
-        <echo>phpcpd --log-pmd build/logs/cpd.xml ${sourceDir} --exclude ${exclude_lib}</echo>
     </target>
 
     <!-- pdepend uses some metrics -->
     <target name="pdepend" depends="prepare">
         <exec dir="${baseDir}" executable="pdepend" failonerror="true">
             <arg line="--jdepend-xml=build/logs/jdepend.xml ${sourceDir}"/>
+            <arg line="--exclude ${exclude_lib}"/>
         </exec>
     </target>
 
