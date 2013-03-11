@@ -2,7 +2,7 @@
     "name": "tz/test-bundle",
     "type": "symfony-bundle",
     "description": "Test bundle for phpunit tests",
-    "keywords": ["phpunit, symfony"],
+    "keywords": ["phpunit symfony"],
     "homepage": "http://www.tzander.de",
     "license": "MIT",
     "authors": [
@@ -25,6 +25,12 @@
         "symfony/console": "2.*",
         "symfony/config": "2.*"
     },
+    "repositories": [
+        {
+            "type": "git",
+            "url": "https://github.com/torstenzander/tzTestBundle"
+        }
+    ],
     "require-dev": {
     },
     "autoload": {
