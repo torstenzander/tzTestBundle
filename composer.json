@@ -1,5 +1,5 @@
 {
-    "name": "tz/test-bundle",
+    "name": "tzander/test-bundle",
     "type": "symfony-bundle",
     "description": "Test bundle for phpunit tests",
     "keywords": ["phpunit symfony"],
