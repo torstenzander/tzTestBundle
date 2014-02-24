@@ -7,16 +7,16 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace Tz\TestBundle\Test\Database;
+namespace Tzander\TestBundle\Test\Database;
 
-use Tz\TestBundle\Database\PDO as Database;
+use Tzander\TestBundle\Database\PDO as Database;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase as BaseWebTestCase;
 
 class DatabaseTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @var Tz\FixtureBundle\Model\Database
+     * @var Tzander\FixtureBundle\Model\Database
      */
     private $database;
 

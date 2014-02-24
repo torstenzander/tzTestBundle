@@ -7,9 +7,9 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace Tz\TestBundle\Database;
+namespace Tzander\TestBundle\Database;
 
-use Tz\TestBundle\Model\Application;
+use Tzander\TestBundle\Model\Application;
 
 class TestCase extends \PHPUnit_Extensions_Database_TestCase
 {

@@ -8,7 +8,7 @@
 * file that was distributed with this source code.
 */
 
-namespace Tz\TestBundle;
+namespace Tzander\TestBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 

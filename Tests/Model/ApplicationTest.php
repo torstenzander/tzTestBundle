@@ -7,16 +7,16 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace Tz\TestBundle\Test\Model;
+namespace Tzander\TestBundle\Test\Model;
 
 use Symfony\Component\HttpKernel\HttpKernel;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase as BaseWebTestCase;
-use Tz\TestBundle\Model\Application;
+use Tzander\TestBundle\Model\Application;
 
 class ApplicationTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @var Tz\TestBundle\Model\Application
+     * @var Tzander\TestBundle\Model\Application
      */
     protected $application;
 

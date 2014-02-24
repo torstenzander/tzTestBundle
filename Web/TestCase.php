@@ -7,14 +7,14 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace Tz\TestBundle\Web;
+namespace Tzander\TestBundle\Web;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase as BaseWebTestCase;
 use Symfony\Component\HttpKernel\Profiler\Profiler;
 use Symfony\Component\Security\Core\Authentication\Token\UsernamePasswordToken;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\BrowserKit\Cookie;
-use Tz\TestBundle\Model\Application;
+use Tzander\TestBundle\Model\Application;
 
 abstract class TestCase extends BaseWebTestCase
 {

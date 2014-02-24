@@ -7,7 +7,7 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace Tz\TestBundle\Database;
+namespace Tzander\TestBundle\Database;
 
 class PDO
 {
@@ -58,6 +58,7 @@ class PDO
     public function getConnection()
     {
         $pdo = new \PDO($this->database . ':host=' . $this->host . '.;dbname=' . $this->databaseName, $this->databaseUser, $this->password);
+
         return $pdo;
     }
 

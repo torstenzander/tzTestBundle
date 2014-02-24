@@ -34,8 +34,10 @@
     "require-dev": {
     },
     "autoload": {
-        "psr-0": { "tz\\TestBundle": "" }
+        "psr-0": {
+            "Tzander\\TestBundle": ""
+        }
     },
 
-    "target-dir": "tz\\TestBundle"
+    "target-dir": "Tzander\\TestBundle"
 }

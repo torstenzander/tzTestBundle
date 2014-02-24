@@ -5,8 +5,8 @@
            xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <parameters>
-        <parameter key="tz_test.database.class">Tz\TestBundle\Database\PDO</parameter>
-        <parameter key="tz_model.application.class">Tz\TestBundle\Model\Application</parameter>
+        <parameter key="tz_test.database.class">Tzander\TestBundle\Database\PDO</parameter>
+        <parameter key="tz_model.application.class">Tzander\TestBundle\Model\Application</parameter>
     </parameters>
     <services>
         <service id="tz_test.database" class="%tz_test.database.class%">
