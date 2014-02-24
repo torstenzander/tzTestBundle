@@ -1,6 +1,6 @@
 <?php
 /*
- * This file is part of the TzTestBundle package.
+ * This file is part of the TzanderTestBundle package.
  *
  * ©2012 Torsten Zander <info@tzander.de>
  *

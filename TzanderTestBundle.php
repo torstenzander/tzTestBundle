@@ -12,6 +12,6 @@ namespace Tzander\TestBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class TzTestBundle extends Bundle
+class TzanderTestBundle extends Bundle
 {
 }

@@ -1,4 +1,4 @@
-TzTestBundle
+TzanderTestBundle
 
 
 Installation
